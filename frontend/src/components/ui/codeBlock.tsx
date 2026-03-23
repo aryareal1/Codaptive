@@ -1,6 +1,6 @@
 import type React from "react";
 import { useMemo, useId } from "react";
-import { cn } from "@/src/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface CodeBlockProps extends React.HTMLAttributes<HTMLDivElement> {
   code: string;

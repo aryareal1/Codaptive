@@ -1,8 +1,8 @@
 "use client";
 
 import { Link, useParams } from "@tanstack/react-router";
-import { Button } from "@/src/components/ui/button";
-import { CodeWindow } from "@/src/components/ui/codeWindow";
+import { Button } from "@/components/ui/button";
+import { CodeWindow } from "@/components/ui/codeWindow";
 import { X, Heart } from "lucide-react";
 
 export default function Lesson() {

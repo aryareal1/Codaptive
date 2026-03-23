@@ -2,11 +2,11 @@
 
 import { Link, useParams } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
-import { Button } from "@/src/components/ui/button";
-import { AnswerButton } from "@/src/components/ui/answerButton";
-import { CodeWindow } from "@/src/components/ui/codeWindow";
-import { LevelBadge } from "@/src/components/ui/levelBadge";
-import { FeedbackSheet } from "@/src/components/ui/feedbackSheet";
+import { Button } from "@/components/ui/button";
+import { AnswerButton } from "@/components/ui/answerButton";
+import { CodeWindow } from "@/components/ui/codeWindow";
+import { LevelBadge } from "@/components/ui/levelBadge";
+import { FeedbackSheet } from "@/components/ui/feedbackSheet";
 import { X, Heart, MonitorPlay, Timer, BookOpen, Check } from "lucide-react";
 import type { Section, Question, ExplanationSection } from "data/learn";
 import { lessonsData } from "data/lesson_sample";

@@ -2,8 +2,8 @@
 
 import { Link } from "@tanstack/react-router";
 import { BookOpen, ChevronRight, Lock } from "lucide-react";
-import { Card, CardHeader } from "@/src/components/ui/card";
-import { Button } from "@/src/components/ui/button";
+import { Card, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { levels } from "data/learn";
 
 export default function Learn() {

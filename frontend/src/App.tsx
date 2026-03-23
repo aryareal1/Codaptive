@@ -1,23 +1,23 @@
 import ReactDOM from "react-dom/client";
 import "./global.css";
-import Navbar from "./src/components/layout/navbar";
-import Home from "./src/pages/landing/index";
-import Footer from "./src/components/layout/footer";
-import Login from "./src/pages/auth/login";
-import Register from "./src/pages/auth/register";
-import ForgotPassword from "./src/pages/auth/forgotPassword";
-import Profile from "./src/pages/dashboard/profile";
-import Learn from "./src/pages/learn/index";
-import Level from "./src/pages/learn/level";
-import Lesson from "./src/pages/learn/lesson";
-import Questions from "./src/pages/learn/questions";
-import Profilebar from "./src/components/layout/profilebar";
-import Settings from "./src/pages/settings/index";
+import Navbar from "./components/layout/navbar";
+import Home from "./pages/landing/index";
+import Footer from "./components/layout/footer";
+import Login from "./pages/auth/login";
+import Register from "./pages/auth/register";
+import ForgotPassword from "./pages/auth/forgotPassword";
+import Profile from "./pages/dashboard/profile";
+import Learn from "./pages/learn/index";
+import Level from "./pages/learn/level";
+import Lesson from "./pages/learn/lesson";
+import Questions from "./pages/learn/questions";
+import Profilebar from "./components/layout/profilebar";
+import Settings from "./pages/settings/index";
 
-import { AccountProvider } from "./src/contexts/account";
-import { SidebarInset, SidebarProvider } from "./src/components/ui/sidebar";
-import { AppSidebar } from "./src/components/layout/sidebar";
-import { DashboardLayout } from "./src/components/layout/dashboard-layout";
+import { AccountProvider } from "./contexts/account";
+import { SidebarInset, SidebarProvider } from "./components/ui/sidebar";
+import { AppSidebar } from "./components/layout/sidebar";
+import { DashboardLayout } from "./components/layout/dashboard-layout";
 import {
   RouterProvider,
   createRouter,
@@ -27,8 +27,8 @@ import {
   useRouterState,
 } from "@tanstack/react-router";
 
-import GlobalNotFound from "./src/pages/global-not-found";
-import { LoadingSpinner } from "./src/components/common/loadingSpinner";
+import GlobalNotFound from "./pages/global-not-found";
+import { LoadingSpinner } from "./components/common/loadingSpinner";
 import { useEffect, useState } from "react";
 
 const rootRoute = createRootRoute({

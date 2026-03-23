@@ -7,10 +7,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/src/components/ui/sidebar";
+} from "@/components/ui/sidebar";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { profileNavItems } from "data/sidebar";
-import { useIsMobile } from "@/src/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function DashboardSidebar() {
   const routerState = useRouterState();

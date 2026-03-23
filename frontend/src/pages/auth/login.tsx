@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
-import { CodeWindow } from "@/src/components/ui/codeWindow";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { CodeWindow } from "@/components/ui/codeWindow";
 
 export default function Login() {
   const navigate = useNavigate();

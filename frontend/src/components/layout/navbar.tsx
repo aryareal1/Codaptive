@@ -1,11 +1,15 @@
 "use client";
 
-import { Button } from "@/src/components/ui/button";
-import { SidebarTrigger } from "@/src/components/ui/sidebar";
+import { Button } from "@/components/ui/button";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Link } from "@tanstack/react-router";
-import { useAccount } from "@/src/contexts/account";
+import { useAccount } from "@/contexts/account";
 
-export default function Navbar({ showTrigger = false }: { showTrigger?: boolean }) {
+export default function Navbar({
+  showTrigger = false,
+}: {
+  showTrigger?: boolean;
+}) {
   const { account } = useAccount();
 
   return (

@@ -25,20 +25,20 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./frontend/*"],
-      "@/components/*": ["./frontend/src/components/*"],
-      "@/lib/*": ["./frontend/src/lib/*"],
-      "@/hooks/*": ["./frontend/src/hooks/*"],
-      "@/store/*": ["./frontend/src/store/*"],
-      "@/utils/*": ["./frontend/src/utils/*"],
-      "@/assets/*": ["./frontend/src/assets/*"],
-      "@/styles/*": ["./frontend/src/styles/*"],
-      "@/pages/*": ["./frontend/src/pages/*"],
-      "@/routes/*": ["./frontend/src/routes/*"],
-      "@/services/*": ["./frontend/src/services/*"],
-      "@/types/*": ["./frontend/src/types/*"],
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/store/*": ["./src/store/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/routes/*": ["./src/routes/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/types/*": ["./src/types/*"],
       "data/*": ["./data/*"]
     }
   },
-  "include": ["frontend"]
+  "include": ["src"]
 }

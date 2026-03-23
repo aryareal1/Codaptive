@@ -8,10 +8,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/src/components/ui/sidebar";
+} from "@/components/ui/sidebar";
 import { PanelLeft } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useAccount } from "@/src/contexts/account";
+import { useAccount } from "@/contexts/account";
 import {
   loggedOutNavItems,
   loggedInNavItems,

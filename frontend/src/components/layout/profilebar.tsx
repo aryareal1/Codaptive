@@ -1,6 +1,6 @@
 import { Star, Flame } from "lucide-react";
-import { useAccount } from "@/src/contexts/account";
-import { SidebarTrigger } from "@/src/components/ui/sidebar";
+import { useAccount } from "@/contexts/account";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function Profilebar() {
   const { account } = useAccount();

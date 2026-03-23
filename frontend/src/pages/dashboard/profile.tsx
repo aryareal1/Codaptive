@@ -2,14 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Button } from "@/src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card";
-import { useAccount } from "@/src/contexts/account";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useAccount } from "@/contexts/account";
 import {
   activityLastWeek,
   activityLastMonth,
@@ -28,7 +23,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import Profilebar from "@/src/components/layout/profilebar";
+import Profilebar from "@/components/layout/profilebar";
 import { BookOpen, ChevronRight, Check, Trophy } from "lucide-react";
 
 export default function Profile() {

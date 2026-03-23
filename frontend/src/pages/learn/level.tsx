@@ -1,7 +1,7 @@
 import { Link, useParams } from "@tanstack/react-router";
 import { Check, Lock, Monitor } from "lucide-react";
-import { Card, CardContent } from "@/src/components/ui/card";
-import { Badge } from "@/src/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { levelMeta } from "data/learn";
 
 export default function Level() {
@@ -44,11 +44,15 @@ export default function Level() {
         <div className="relative max-w-2xl mx-auto">
           {level.lessons.map((lesson, i) => {
             const isCompleted = lesson.completed;
-            const isOngoing = !isCompleted && (i === 0 || level.lessons[i - 1].completed);
+            const isOngoing =
+              !isCompleted && (i === 0 || level.lessons[i - 1].completed);
             const isLocked = !isCompleted && !isOngoing;
 
             return (
-              <div key={lesson.id} className="relative mb-8 md:mb-12 group last:mb-0">
+              <div
+                key={lesson.id}
+                className="relative mb-8 md:mb-12 group last:mb-0"
+              >
                 {/* Vertical Line Connector */}
                 {i < level.lessons.length - 1 && (
                   <div

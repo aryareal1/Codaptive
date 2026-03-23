@@ -1,0 +1,4 @@
+{
+  "biome.lsp.bin": "${workspaceFolder}/frontend/node_modules/.bin/biome.exe",
+  "git.ignoreLimitWarning": true
+}

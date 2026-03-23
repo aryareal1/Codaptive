@@ -1,7 +1,7 @@
 "use client";
 
 import React, { Component, type ReactNode } from "react";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { AlertTriangle, RefreshCcw } from "lucide-react";
 
 interface Props {
@@ -39,12 +39,15 @@ export class ErrorBoundary extends Component<Props, State> {
           <div className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mb-6">
             <AlertTriangle className="w-10 h-10 text-red-500" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Something went wrong</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+            Something went wrong
+          </h2>
           <p className="text-gray-600 max-w-md mb-8">
-            An unexpected error occurred. We've been notified and are working to fix it.
+            An unexpected error occurred. We've been notified and are working to
+            fix it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
+            <Button
               type="button"
               onClick={this.handleReset}
               className="rounded-xl bg-blue-500 hover:bg-blue-600 px-8 h-12 flex items-center gap-2"
@@ -52,20 +55,21 @@ export class ErrorBoundary extends Component<Props, State> {
               <RefreshCcw className="w-4 h-4" />
               RELOAD PAGE
             </Button>
-            <Button 
+            <Button
               type="button"
               variant="outline"
-              onClick={() => window.location.href = "/"}
+              onClick={() => (window.location.href = "/")}
               className="rounded-xl border-gray-200 px-8 h-12"
             >
               GO HOME
             </Button>
           </div>
-          {typeof window !== 'undefined' && window.location.hostname === 'localhost' && (
-            <pre className="mt-8 p-4 bg-gray-50 rounded-lg text-left text-xs text-red-600 overflow-auto max-w-2xl w-full">
-              {this.state.error?.toString()}
-            </pre>
-          )}
+          {typeof window !== "undefined" &&
+            window.location.hostname === "localhost" && (
+              <pre className="mt-8 p-4 bg-gray-50 rounded-lg text-left text-xs text-red-600 overflow-auto max-w-2xl w-full">
+                {this.state.error?.toString()}
+              </pre>
+            )}
         </div>
       );
     }

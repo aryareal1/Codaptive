@@ -1,5 +1,5 @@
 import type React from "react";
-import { cn } from "@/src/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface LevelSelectButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;

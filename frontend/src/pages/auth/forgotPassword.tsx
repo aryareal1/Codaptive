@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/src/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -19,9 +19,13 @@ export default function ForgotPassword() {
     <div className="min-h-screen bg-[#F9FAFB] flex items-center justify-center p-4">
       <Card className="w-full max-w-md rounded-2xl border border-gray-100 shadow-sm">
         <CardHeader className="text-center pb-2">
-          <CardTitle className="text-2xl font-bold text-gray-900">Forgot password?</CardTitle>
+          <CardTitle className="text-2xl font-bold text-gray-900">
+            Forgot password?
+          </CardTitle>
           <p className="text-sm text-gray-500 mt-1">
-            {sent ? "Check your email for a reset link." : "Enter your email and we'll send a reset link."}
+            {sent
+              ? "Check your email for a reset link."
+              : "Enter your email and we'll send a reset link."}
           </p>
         </CardHeader>
         <CardContent className="p-6 pt-0">
@@ -35,11 +39,18 @@ export default function ForgotPassword() {
                 className="rounded-xl h-11"
                 required
               />
-              <Button type="submit" className="w-full h-11 rounded-xl">Send reset link</Button>
+              <Button type="submit" className="w-full h-11 rounded-xl">
+                Send reset link
+              </Button>
             </form>
           ) : null}
           <p className="text-center text-sm text-gray-500 mt-6">
-            <Link to="/login" className="text-blue-600 font-medium hover:text-blue-700">Back to log in</Link>
+            <Link
+              to="/login"
+              className="text-blue-600 font-medium hover:text-blue-700"
+            >
+              Back to log in
+            </Link>
           </p>
         </CardContent>
       </Card>

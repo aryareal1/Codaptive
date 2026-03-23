@@ -1,14 +1,8 @@
 "use client";
-
-import { Button } from "@/src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Terminal, Rocket } from "lucide-react";
-import { HeroVisual } from "@/src/components/ui/heroSection";
+import { HeroVisual } from "@/components/ui/heroSection";
 
 export default function Home() {
   return (

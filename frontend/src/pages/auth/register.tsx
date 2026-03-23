@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Eye, EyeOff, X } from "lucide-react";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export default function Register() {
   const navigate = useNavigate();

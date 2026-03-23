@@ -1,7 +1,7 @@
 "use client";
 
 import { useNavigate } from "@tanstack/react-router";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
 
 export default function GlobalNotFound() {

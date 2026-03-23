@@ -1,6 +1,6 @@
 import { Outlet } from "@tanstack/react-router";
-import { SidebarProvider, SidebarInset } from "@/src/components/ui/sidebar";
-import { DashboardSidebar } from "@/src/components/layout/dashboard-sidebar";
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+import { DashboardSidebar } from "@/components/layout/dashboard-sidebar";
 
 export function DashboardLayout() {
   return (
