@@ -1,2 +1,13 @@
 node_modules/
+bun.lockb
+
 .env
+.env.local
+.env.production
+*.pem
+*.key
+
+npm-debug.log*
+yarn-error.log*
+logs/
+*.log
