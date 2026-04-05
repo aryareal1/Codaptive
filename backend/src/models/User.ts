@@ -1,51 +1,56 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Document, Types } from "mongoose";
 
-export interface IUser {
+interface IModuleProgress {
+  moduleId: Types.ObjectId;
+  name: string;
+  progress: number;
+  completed: boolean;
+}
+
+interface ILessonProgress {
+  lessonId: Types.ObjectId;
+  completed: boolean;
+  completedAt?: Date;
+}
+
+interface IActivityDay {
+  day: Date;
+  lessons: number;
+  challenges: number;
+}
+
+interface IActivityWeek {
+  week: number;
+  lessons: number;
+  challenges: number;
+}
+
+export interface IUser extends Document {
   username: string;
   email: string;
-  password: string;
-  role: string;
+  password?: string;
+  role: "user" | "admin";
   isVerified: boolean;
   verificationToken?: string;
   resetPasswordToken?: string;
   resetPasswordExpire?: Date;
-  avatar?: string;
-  stats?: {
+  avatar: string;
+  stats: {
     xp: number;
     streak: number;
     level: number;
     maxXP: number;
   };
-  progress?: {
-    modules: Array<{
-      moduleId: Schema.Types.ObjectId;
-      name: string;
-      progress: number;
-      completed: boolean;
-    }>;
-    lessons: Array<{
-      lessonId: Schema.Types.ObjectId;
-      completed: boolean;
-      completedAt?: Date;
-    }>;
-    levels: Array<{
-      levelId: string;
-      status: "COMPLETED" | "ON GOING" | "LOCKED";
-    }>;
+  progress: {
+    modules: IModuleProgress[];
+    lessons: ILessonProgress[];
+    levels: { levelId: string; status: "COMPLETED" | "ON GOING" | "LOCKED" }[];
   };
-  activity?: {
-    lastWeek: Array<{
-      day: Date;
-      lessons: number;
-      challenges: number;
-    }>;
-    lastMonth: Array<{
-      week: number;
-      lessons: number;
-      challenges: number;
-    }>;
+  activity: {
+    lastWeek: IActivityDay[];
+    lastMonth: IActivityWeek[];
   };
-  settings?: {
+  settings: {
     theme: "light" | "dark";
     notifications: boolean;
   };
@@ -152,4 +157,4 @@ const userSchema = new Schema(
   },
 );
 
-export default model("User", userSchema);
+export default model<IUser>("User", userSchema);

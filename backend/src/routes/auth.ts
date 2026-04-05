@@ -2,7 +2,7 @@ import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
-import User from "../models/User";
+import User, { type IUser } from "../models/User";
 import { generateAccessToken, generateRefreshToken } from "../utils/token";
 import { getEmailTemplate } from "../utils/emailTemplates";
 import transporter from "../config/mailer";
@@ -53,6 +53,13 @@ router.post("/register", async (req, res) => {
       isVerified: false,
       verificationToken: hashToken(rawToken),
       avatar: `https://ui-avatars.com/api/?name=${username}&background=random&color=fff`,
+      progress: {
+        levels: [
+          { levelId: "beginner", status: "ON GOING" },
+          { levelId: "intermediate", status: "LOCKED" },
+          { levelId: "advanced", status: "LOCKED" },
+        ],
+      },
     });
 
     const url = `${FRONTEND_URL}/verify-email/${rawToken}`;
@@ -168,12 +175,12 @@ router.post("/login", async (req, res) => {
       });
     }
 
-    const user = await User.findOne({ email }).select("+password");
+    const user = (await User.findOne({ email }).select("+password")) as IUser;
 
     if (
       !user ||
       !user.isVerified ||
-      !(await bcrypt.compare(password, user.password))
+      !(await bcrypt.compare(password, user.password || ""))
     ) {
       return res.status(401).json({
         status: "fail",

@@ -1,9 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
-import User from "../models/User";
+import User, { type IUser } from "../models/User";
 import Question, { type IQuestion } from "../models/Question";
 import { verifyToken } from "../middleware/verifyToken";
 import { isAdmin } from "../middleware/isAdmin";
+import { updateUserProgress } from "../services/progressService";
 
 const router = express.Router();
 
@@ -151,11 +152,12 @@ router.delete("/delete/:id", verifyToken, isAdmin, async (req, res) => {
 router.post("/submit", verifyToken, async (req, res) => {
   try {
     const { questionId, userAnswer } = req.body;
-    const userId = req.userId;
+    const userId = req.userId as string;
 
-    const question = await Question.findById(questionId).select(
+    const question = (await Question.findById(questionId).select(
       "+correctAnswer +explanation",
-    );
+    )) as IQuestion;
+    const { lessonId, moduleId } = question;
 
     if (!question) {
       return res.status(404).json({
@@ -166,16 +168,12 @@ router.post("/submit", verifyToken, async (req, res) => {
 
     const isCorrect = question.correctAnswer === userAnswer;
 
-    const user = await User.findById(userId);
+    const user = (await User.findById(userId)) as IUser;
     if (!user) {
       return res.status(404).json({
         status: "fail",
         message: "User not found",
       });
-    }
-
-    if (!user.stats) {
-      user.stats = { xp: 0, level: 1, streak: 0, maxXP: 100 };
     }
 
     if (isCorrect) {
@@ -188,6 +186,12 @@ router.post("/submit", verifyToken, async (req, res) => {
         user.stats.xp -= user.stats.maxXP;
         user.stats.maxXP = Math.round(user.stats.maxXP * 1.2);
       }
+
+      await updateUserProgress(
+        userId,
+        lessonId ? lessonId.toString() : "",
+        moduleId ? moduleId.toString() : "",
+      );
     } else {
       user.stats.streak = 0;
     }

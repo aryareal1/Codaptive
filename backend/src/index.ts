@@ -3,8 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import connectDB from "./utils/connectDB";
+import adminRoutes from "./routes/admin";
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/user";
+import questionRoutes from "./routes/question";
 
 const app = express();
 
@@ -13,7 +15,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -22,8 +24,10 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
+app.use("/admin", adminRoutes);
 app.use("/auth", authRoutes);
 app.use("/user", userRoutes);
+app.use("/question", questionRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running at http://localhost:${process.env.PORT}`);
