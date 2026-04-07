@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import connectDB from "./utils/connectDB";
 import authRoutes from "./routes/auth";
@@ -9,7 +8,6 @@ import lessonRoutes from "./routes/lesson";
 
 const app = express();
 
-dotenv.config();
 connectDB();
 
 app.use(
