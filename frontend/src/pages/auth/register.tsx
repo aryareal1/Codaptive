@@ -133,8 +133,8 @@ export default function Register() {
             <div className="flex flex-col items-center text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
               <div className="mb-10 relative">
                 <img
-                  src="/Macot.png"
-                  alt="Macot"
+                  src="/macot.png"
+                  alt="macot"
                   className="w-48 h-48 object-contain drop-shadow-xl"
                 />
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 h-4 bg-black/5 blur-lg rounded-full" />
@@ -158,8 +158,8 @@ export default function Register() {
               <div className="mb-6 flex flex-col items-center">
                 <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4 overflow-hidden border-2 border-border shadow-sm">
                   <img
-                    src="/Macot.png"
-                    alt="Macot"
+                    src="/macot.png"
+                    alt="macot"
                     className="w-24 h-24 object-contain"
                   />
                 </div>
@@ -216,8 +216,8 @@ export default function Register() {
               <div className="mb-6 flex flex-col items-center">
                 <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4 overflow-hidden border-2 border-border shadow-sm">
                   <img
-                    src="/Macot.png"
-                    alt="Macot"
+                    src="/macot.png"
+                    alt="macot"
                     className="w-24 h-24 object-contain"
                   />
                 </div>

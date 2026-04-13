@@ -46,7 +46,7 @@ export const levelsData = [
     maxXP: 2000,
     description:
       "Master the basics: variables, loops, functions, and error handling. Build your foundation.",
-    icon: "/Beginner.png",
+    icon: "/beginner.png",
     iconBg: "bg-white",
     badgeBg: "bg-[#DCFCE7]",
     badgeText: "text-[#166534]",
@@ -58,7 +58,7 @@ export const levelsData = [
     maxXP: 5000,
     description:
       "Dive into data structures, OOP, and build your first real-world projects.",
-    icon: "/Intermediate.png",
+    icon: "/intermediate.png",
     iconBg: "bg-white",
     badgeBg: "bg-[#DBEAFE]",
     badgeText: "text-[#1E40AF]",
@@ -70,20 +70,28 @@ export const levelsData = [
     maxXP: 10000,
     description:
       "Master advanced concepts like decorators, generators, and concurrency.",
-    icon: "/Advance.png",
+    icon: "/advance.png",
     iconBg: "bg-white",
     badgeBg: "bg-[#E5E7EB]",
     badgeText: "text-[#4B5563]",
   },
 ];
 
-export function getLevelInfo(accountStats: { xp: number; level: number; maxXP: number }, progressLevels: any[] = []) {
-  const ongoingLevel = progressLevels.find(l => l.status === "ON GOING") 
-                    || progressLevels.slice().reverse().find(l => l.status === "COMPLETED")
-                    || { levelId: levelsData[0].id };
-  
-  const currentPathData = levelsData.find(l => l.id === (ongoingLevel.levelId || ongoingLevel.id)) || levelsData[0];
-  const currentIndex = levelsData.findIndex(l => l.id === currentPathData.id);
+export function getLevelInfo(
+  accountStats: { xp: number; level: number; maxXP: number },
+  progressLevels: any[] = [],
+) {
+  const ongoingLevel = progressLevels.find((l) => l.status === "ON GOING") ||
+    progressLevels
+      .slice()
+      .reverse()
+      .find((l) => l.status === "COMPLETED") || { levelId: levelsData[0].id };
+
+  const currentPathData =
+    levelsData.find(
+      (l) => l.id === (ongoingLevel.levelId || ongoingLevel.id),
+    ) || levelsData[0];
+  const currentIndex = levelsData.findIndex((l) => l.id === currentPathData.id);
   const nextLevel = levelsData[currentIndex + 1] || null;
 
   return {
@@ -99,6 +107,8 @@ export function getLevelInfo(accountStats: { xp: number; level: number; maxXP: n
 
 // Default values for initial load or demo
 export const currentXP = 0;
-export const levelInfo = getLevelInfo({ xp: 0, level: 1, maxXP: 1000 }, [{ levelId: "beginner", status: "ON GOING" }]);
+export const levelInfo = getLevelInfo({ xp: 0, level: 1, maxXP: 1000 }, [
+  { levelId: "beginner", status: "ON GOING" },
+]);
 export const maxXP = levelInfo.maxXP;
 export const xpPercentage = levelInfo.progress;

@@ -256,7 +256,7 @@ declare module "@tanstack/react-router" {
 
 export default function App() {
   return (
-    <ThemeProvider defaultTheme="system" storageKey="codaptive-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="codaptive-ui-theme">
       <AccountProvider>
         <RouterProvider router={router} />
       </AccountProvider>

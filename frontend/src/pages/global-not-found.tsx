@@ -14,7 +14,7 @@ export default function GlobalNotFound() {
         <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-150" />
 
         <img
-          src="/Macot.png"
+          src="/macot.png"
           alt="404 Mascot"
           className="w-64 h-64 md:w-80 md:h-80 object-contain relative z-10 drop-shadow-2xl animate-bounce-subtle"
         />

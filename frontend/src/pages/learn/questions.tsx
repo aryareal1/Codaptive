@@ -204,7 +204,9 @@ export default function Questions() {
 
             if (profilePayload) {
               setAccount(profilePayload);
-              const streakValue = calculateStreak(profilePayload.progress.lessons || []);
+              const streakValue = calculateStreak(
+                profilePayload.progress.lessons || [],
+              );
               setPopupStreak(streakValue);
 
               const userId = profilePayload._id || profilePayload.id || "user";
@@ -294,7 +296,7 @@ export default function Questions() {
           <div className="flex flex-col items-center mb-8">
             <div className="w-20 h-20 md:w-24 md:h-24 bg-muted rounded-full flex items-center justify-center mb-4 shadow-inner ring-4 ring-background">
               <img
-                src="/Macot.png"
+                src="/macot.png"
                 alt="Level"
                 className="w-24 h-24 md:w-32 md:h-32 object-contain"
               />
